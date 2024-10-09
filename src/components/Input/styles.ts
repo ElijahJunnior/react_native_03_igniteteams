@@ -6,6 +6,8 @@ export const Container = styled(TextInput)`
   border-radius: 6px;
   color: ${({theme}) => theme.COLORS.WHITE};
   flex: 1; 
+  font-family: ${(({theme}) => theme.FONT_FAMILY.REGULAR)};
+  font-size: ${(({theme}) => theme.FONT_SIZE.MD)}px;
   max-height: 56px;
   min-height: 56px;
   padding: 16px;
