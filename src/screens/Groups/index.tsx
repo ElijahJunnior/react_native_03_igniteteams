@@ -6,14 +6,24 @@ import { GroupCard } from "@components/GroupCard";
 import { Container } from "./styles";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
-import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-export function Groups() {
+type RootParamList = {
+  groups: undefined;
+  new: undefined;
+  players: {
+    group: string;
+  };
+};
+
+type Props = {
+  navigation: NativeStackNavigationProp<RootParamList, "groups">;
+};
+
+export function Groups({ navigation }: Props) {
   const [groups, setGroups] = useState<string[]>([]);
   // "Galera do Fortnite",
   // "Galera do ChaDas22",
-
-  const navigation = useNavigation();
 
   function handleNewGroup() {
     navigation.navigate("new");
